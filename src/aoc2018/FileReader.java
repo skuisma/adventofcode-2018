@@ -21,4 +21,9 @@ public class FileReader {
         }
         return allLines;
     }
+
+    public String readFirstRow() {
+        List<String> lines = readFile();
+        return lines.get(0);
+    }
 }
