@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Day08 {
-    private String dataPath = "src\\resources\\input-day8-1.txt";
     private List<Integer> codes = new ArrayList<>();
     private int result = 0;
 
@@ -15,8 +14,9 @@ public class Day08 {
     }
 
     private void solve2() {
+        String dataPath = "src\\resources\\input-day8-1.txt";
         FileReader fr = new FileReader(dataPath);
-        String data[] = fr.readFirstRow().split(" ");
+        String[] data = fr.readFirstRow().split(" ");
         codes = Stream.of(data).map(Integer::parseInt).collect(Collectors.toList());
 
         while (codes.size() > 1) {
@@ -37,7 +37,7 @@ public class Day08 {
             }
         }
         System.out.println("Total: " + result);
-        codes.stream().forEach(System.out::println);
+        codes.forEach(System.out::println);
     }
 
 
