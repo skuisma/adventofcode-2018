@@ -93,21 +93,20 @@ public class Day06 {
 
         banned.stream().distinct().forEach(x -> areas.remove(x));
 
+
         List<Integer> maxArea = areas
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
-                //.map(x -> coords.get(x.getKey()))
-                //.forEach(System.out::println);
-
 
         maxArea.stream().forEach(x -> {
             System.out.println("key " + x + "\txy " + Arrays.toString(coords.get(x)) + " " + areas.get(x));
         });
         System.out.println("Total area " + totalDis);
 
+        /**
         List<int[]> filtered = coords
                 .stream()
                 .filter(ints -> ints[0]==boundaries.get(0))
@@ -117,7 +116,7 @@ public class Day06 {
                 .collect(Collectors.toList());
 
         filtered.forEach(c -> System.out.println(Arrays.toString(c)));
-
+        **/
 
 
     }
