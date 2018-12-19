@@ -31,7 +31,7 @@ public class Day08 {
         root = root.deleteRootNode();
 
         //printTree(root, " ");
-        //System.out.println(task1(root, 0));
+        System.out.println(root.getSum() + task1(root, 0));
         System.out.println(task2(root, 0));
     }
 
@@ -108,23 +108,7 @@ public class Day08 {
             }
         }
         total += tmp;
-        System.out.println(node.getData() + " = " + tmp + " > total:" + total);
-        /**
-        for (Node<Integer> n : node.getChildren()) {
-            if (n.getChildren().size() == 0) {
-                total += n.getSum();
-                System.out.println("0: " + n.getSum() + " > " + total);
-            } else {
-                List<Integer> ref = n.getData();
-                for (int r : ref) {
-                    if (n.getChildren().size() >= r ) {
-                        tmp = task2(n, tmp);
-                    }
-                }
-            }
-            total += tmp;
-            System.out.println(node.getData() + " = " + tmp + " > " + total);
-        }*/
+        //System.out.println(node.getData() + " = " + tmp + " > total:" + total);
         return total;
     }
 
